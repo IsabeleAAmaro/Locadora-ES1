@@ -18,6 +18,32 @@ public class ClienteRepository implements Repository {
 	public ClienteRepository(IClienteDAO dao) {
 		this.dao = dao;
 	}
+
+	public List<Cliente> findAllByCPF() throws SQLException {
+		// Busca todos os clientes do repositório por CPF
+		var dtos = dao.findAllByCPF();
+
+		// Converte os DTOs vindo do repositório em clientes
+		var clientes = new ArrayList<Cliente>();
+
+		for (var dto : dtos)
+			clientes.add(create(dto));
+
+		return clientes;
+	}
+
+	public List<Cliente> findAllByNome() throws SQLException {
+		// Busca todos os clientes do repositório por Nome
+		var dtos = dao.findAllByNome();
+
+		// Converte os DTOs vindo do repositório em clientes
+		var clientes = new ArrayList<Cliente>();
+
+		for (var dto : dtos)
+			clientes.add(create(dto));
+
+		return clientes;
+	}
 	
 	/**
 	 * Retorna todos os clientes
@@ -60,7 +86,7 @@ public class ClienteRepository implements Repository {
 	/**
 	 * Adiciona/atualiza um cliente no repositório
 	 * 
-	 * @param clienteCliente a ser inserido/atualizado
+	 * @param cliente Cliente a ser inserido/atualizado
 	 * @throws SQLException Exceção em caso de problemas no acesso ao BD
 	 */
 	public void add(Cliente cliente) throws SQLException  {
@@ -80,11 +106,13 @@ public class ClienteRepository implements Repository {
 	/**
 	 * Remove um cliente do repositório
 	 * 
-	 * @param cliente Cliente a ser removido
+	 * @param cpf do cliente a ser removido
 	 * @throws SQLException Exceção em caso de problemas no acesso ao BD
 	 */
-	public void remove(Cliente cliente) throws SQLException  {
+	public void remove(Long cpf) throws SQLException  {
 		// Se cliente TEM ID, então deleta do BD
+		Cliente cliente = findByCPF(cpf);
+
 		if (cliente.getId() != null) {
 			dao.delete(cliente);
 			

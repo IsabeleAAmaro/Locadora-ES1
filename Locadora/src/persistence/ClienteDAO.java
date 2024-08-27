@@ -133,7 +133,50 @@ public class ClienteDAO implements IClienteDAO {
 			return clientes;
 		}
 	}
-	
+
+	//TODO: COMENTAR TUDO
+	@Override
+	public List<ClienteDTO> findAllByCPF() throws SQLException {
+		// Abre uma conexão com o BD
+		// Cria um statement
+		// Executa o comando que retorna um ResultSet
+		try (var conn = DBConnection.get();
+			 var stmt = conn.createStatement();
+			 var rs = stmt.executeQuery("select * from clientes order by cpf")) {
+
+			var mapper = new ClienteMapper();
+			var clientes = new ArrayList<ClienteDTO>();
+
+			// Para todos os regitros vindoos do BD, converte os dados
+			// do ResultSet em DTO usando o mapper
+			while (rs.next())
+				clientes.add(mapper.map(rs));
+
+			return clientes;
+		}
+	}
+
+	@Override
+	public List<ClienteDTO> findAllByNome() throws SQLException {
+		// Abre uma conexão com o BD
+		// Cria um statement
+		// Executa o comando que retorna um ResultSet
+		try (var conn = DBConnection.get();
+			 var stmt = conn.createStatement();
+			 var rs = stmt.executeQuery("select * from clientes order by nome")) {
+
+			var mapper = new ClienteMapper();
+			var clientes = new ArrayList<ClienteDTO>();
+
+			// Para todos os regitros vindoos do BD, converte os dados
+			// do ResultSet em DTO usando o mapper
+			while (rs.next())
+				clientes.add(mapper.map(rs));
+
+			return clientes;
+		}
+	}
+
 	/**
 	 * Retorna um cliente baseado no CPF
 	 * 

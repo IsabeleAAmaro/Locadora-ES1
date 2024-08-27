@@ -3,11 +3,26 @@ package ui;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import domain.Cliente;
 
 public class ListarClientesView {
+
+	//TODO: formatar mensagens do readData
+
+	public String readData() {
+		var input = new Scanner(System.in);
+		String ordenacao;
+
+		System.out.println("Listar Clientes - Digite a ordenação Desejada");
+		System.out.println("CPF: C");
+		System.out.println("Nome: N");
+		ordenacao = input.nextLine();
+
+		return ordenacao;
+	}
 
 	public void mostrarClientes(List<Cliente> clientes) {
 		

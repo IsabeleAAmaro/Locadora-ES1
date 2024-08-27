@@ -3,7 +3,7 @@ package domain;
 /**
  * Códigos de erro de validação e processamento
  */
-public enum Erro {
+public enum Erro extends Throwable {
 	CPF_INVALIDO,
 	NOME_INVALIDO,
 	DATA_INVALIDA,

@@ -26,17 +26,18 @@ public class MenuPresenter implements Presenter {
 					presenter.run();	
 				}
 				
-				case EXCLUIR_CLIENTE 	-> { 
-					System.out.println("Não implementado!"); 
+				case EXCLUIR_CLIENTE 	-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.EXCLUIR_CLIENTE);
+					presenter.run();
 				}
 				
 				case LISTAR_CLIENTE 	-> { 
 					var presenter = PresenterFactory.get(PresenterFactory.Type.LISTAR_CLIENTE);
 					presenter.run();
 				}
-				
-				case CADASTRAR_VEICULO 	-> { System.out.println("Não implementado!"); }
-				case EXCLUIR_VEICULO 	-> { System.out.println("Não implementado!"); }
+
+				case CADASTRAR_VEICULO 	-> System.out.println("Não implementado!");
+				case EXCLUIR_VEICULO -> System.out.println("Não implementado!");
 				case LISTAR_VEICULO 	-> { System.out.println("Não implementado!"); }
 				case LOCAR_VEICULO 		-> { System.out.println("Não implementado!"); } 
 				case DEVOLVER_VEICULO 	-> { System.out.println("Não implementado!"); } 
