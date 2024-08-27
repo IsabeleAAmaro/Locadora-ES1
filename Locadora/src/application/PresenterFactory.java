@@ -2,14 +2,9 @@ package application;
 
 import domain.ClienteRepository;
 import persistence.ClienteDAO;
-import ui.CadastroClientePrt;
-import ui.CadastroClienteView;
-import ui.ListarClientesPrt;
-import ui.ListarClientesView;
-import ui.MenuPresenter;
-import ui.MenuView;
-import ui.Presenter;
+import ui.*;
 import usecases.CadastroClienteCtrl;
+import usecases.ExclusaoClienteCtrl;
 import usecases.ListarClientesCtrl;
 
 /**
@@ -49,7 +44,11 @@ public class PresenterFactory {
 			}
 		
 			case EXCLUIR_CLIENTE -> {
-				return null;
+				var repository = new ClienteRepository(new ClienteDAO());
+				var view = new ExclusaoClienteView();
+				var controller = new ExclusaoClienteCtrl(repository);
+
+				return new ExclusaoClientePrt(view, controller);
 			}
 		
 			case LISTAR_CLIENTE -> {
