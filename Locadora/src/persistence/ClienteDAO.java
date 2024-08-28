@@ -96,7 +96,7 @@ public class ClienteDAO implements IClienteDAO {
 		// Abre uma conexão com o BD
 		// Cria um statement
 		try (var conn = DBConnection.get(); 
-			 var stmt = conn.prepareStatement("delete from clientes where id=?")) {
+			 var stmt = conn.prepareStatement("delete from clientes where id = ?")) {
 				
 			// Define ID do comando
 			stmt.setString(1, cliente.getId());
@@ -134,7 +134,7 @@ public class ClienteDAO implements IClienteDAO {
 		}
 	}
 
-	//TODO: COMENTAR TUDO
+	//TODO: Padronizar metodos
 	@Override
 	public List<ClienteDTO> findAllByCPF() throws SQLException {
 		// Abre uma conexão com o BD

@@ -7,6 +7,8 @@ import java.util.Scanner;
  */
 public class MenuView {
 
+	//TODO: Tem alguma coisa pra adicionar aqui?
+
 	public enum Opcao { CADASTRAR_CLIENTE,
                         EXCLUIR_CLIENTE,
                         LISTAR_CLIENTE,

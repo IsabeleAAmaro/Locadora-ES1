@@ -17,6 +17,7 @@ public class ListarClientesPrt implements Presenter {
 	public void run() {
 		String ordenacao = view.readData();
 
+		//TODO: Ver esses null pointers?
 		switch (ordenacao) {
 			case "C":
 				var resultadoCPF = controller.recuperarTodosClientesPorCPF();
@@ -34,6 +35,7 @@ public class ListarClientesPrt implements Presenter {
 					view.mostrarErro();
 				break;
 
+				//TODO: Tratamento de erro pra qnd digitar outra coisa q nao seja C OU N aqui ou em outro lugar?
 			default:
 				var resultadoTodos = controller.recuperarTodosClientes();
 				if (resultadoTodos.sucesso())
@@ -42,14 +44,6 @@ public class ListarClientesPrt implements Presenter {
 					view.mostrarErro();
 				break;
 		}
-
-		/*
-				if (resultado.sucesso())
-			view.mostrarClientes(resultado.valor);
-		else
-			view.mostrarErro();
-		 */
-
 	}
 }
 

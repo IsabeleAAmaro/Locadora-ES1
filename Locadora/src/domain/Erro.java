@@ -3,7 +3,7 @@ package domain;
 /**
  * Códigos de erro de validação e processamento
  */
-public enum Erro extends Throwable {
+public enum Erro {
 	CPF_INVALIDO,
 	NOME_INVALIDO,
 	DATA_INVALIDA,
@@ -21,12 +21,15 @@ public enum Erro extends Throwable {
 	ENDERECO_INVALIDO,
 	TELEFONE_INVALIDO,
 	ERRO_BD,
+	//Falta...cor invalida? veiculo inexistente?
 	CLIENTE_INEXISTENTE,
 	PLACA_INVALIDA,
 	PLACA_REPETIDA,
 	MODELO_INVALIDO,
 	DIARIA_VALOR_INVALIDO,
 	ANO_FABRICACAO_INVALIDO,
-	QUILOMETRAGEM_INVALIDA
+	QUILOMETRAGEM_INVALIDA,
+	LOCACAO_INEXISTENTE,
+	VEICULO_JA_ALOCADO,
 
 }

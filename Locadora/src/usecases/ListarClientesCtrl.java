@@ -13,11 +13,11 @@ import domain.Resultado;
  */
 public class ListarClientesCtrl {
 
-	private final ClienteRepository repository;
+	private final ClienteRepository repo;
 	
-	public ListarClientesCtrl(ClienteRepository repository) {
+	public ListarClientesCtrl(ClienteRepository repo) {
 		super();
-		this.repository = repository;
+		this.repo = repo;
 	}
 
 	/**
@@ -27,18 +27,24 @@ public class ListarClientesCtrl {
 	 */
 	public Resultado<List<Cliente>> recuperarTodosClientes() {
 		try {
-			var clientes = repository.findAll();
-			
+			var clientes = repo.findAll();
+
 			return Resultado.ok(clientes);
 		} catch (SQLException e) {
 			// Se ocorrer alguma exceção no BD, avisa
 			return Resultado.erro(List.of(Erro.ERRO_BD));
 		}
 	}
+
+	/**
+	 * Recupera todos os clientes do cadastro por CPF
+	 *
+	 * @return Lista de clientes ou erro de acesso ao BD
+	 */
 
 	public Resultado<List<Cliente>> recuperarTodosClientesPorCPF() {
 		try {
-			var clientes = repository.findAllByCPF();
+			var clientes = repo.findAllByCPF();
 
 			return Resultado.ok(clientes);
 		} catch (SQLException e) {
@@ -47,9 +53,14 @@ public class ListarClientesCtrl {
 		}
 	}
 
+	/**
+	 * Recupera todos os clientes do cadastro por Nome
+	 *
+	 * @return Lista de clientes ou erro de acesso ao BD
+	 */
 	public Resultado<List<Cliente>> recuperarTodosClientesPorNome() {
 		try {
-			var clientes = repository.findAllByNome();
+			var clientes = repo.findAllByNome();
 
 			return Resultado.ok(clientes);
 		} catch (SQLException e) {

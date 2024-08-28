@@ -21,7 +21,10 @@ public class ClienteBuilder {
 	private Integer ddd;
 	private Long numeroTel;
 	
-	public ClienteBuilder() {}
+	public ClienteBuilder() {
+
+
+	}
 	
 	public ClienteBuilder withCPF(Long cpf) {
 		this.cpf = cpf;

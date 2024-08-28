@@ -12,6 +12,7 @@ import usecases.ListarClientesCtrl;
  */
 public class PresenterFactory {
 
+	//TODO: Adicionar novas implementações aqui
 	/**
 	 * Tipo do presenter
 	 */

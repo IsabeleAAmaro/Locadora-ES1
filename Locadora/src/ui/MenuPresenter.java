@@ -5,7 +5,9 @@ import ui.MenuView.Opcao;
 
 public class MenuPresenter implements Presenter {
 
-	private final MenuView view; 
+	private final MenuView view;
+
+	//TODO: Adicionar novas implementações aqui
 
 	public MenuPresenter(MenuView view) {
 		super();

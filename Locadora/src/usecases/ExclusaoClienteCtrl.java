@@ -9,14 +9,14 @@ import java.util.List;
 
 public class ExclusaoClienteCtrl {
 
-    private final ClienteRepository clienteRepository;
+    private final ClienteRepository repo;
 
-    public ExclusaoClienteCtrl(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
+    public ExclusaoClienteCtrl(ClienteRepository repo) {
+        this.repo = repo;
     }
 
-    //TODO: ALTERAR MAIS
-    //TODO: RETURN NULL???
+    //TODO: ?
+
     public List<Erro> excluirCLiente(ClienteCPFRequest cpfRequest){
         try{
             var resultado = new ClienteBuilder()
@@ -26,16 +26,14 @@ public class ExclusaoClienteCtrl {
             if (resultado.sucesso()) {
                 var cliente = resultado.valor;
 
-                if (cliente.getId() == null) {
+                if (cliente.getId() == null)
                     return List.of(Erro.CLIENTE_INEXISTENTE);
-                }
 
-                clienteRepository.remove(cliente.getCpf().valor);
+                repo.remove(cliente.getCpf().valor);
                 return null;
             } else {
                 return resultado.erros;
             }
-
 
         } catch (SQLException e){
             return List.of(Erro.ERRO_BD);
