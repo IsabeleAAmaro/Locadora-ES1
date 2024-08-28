@@ -26,8 +26,9 @@ public class MenuPresenter implements Presenter {
 					presenter.run();	
 				}
 				
-				case EXCLUIR_CLIENTE 	-> { 
-					System.out.println("Não implementado!"); 
+				case EXCLUIR_CLIENTE 	-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.EXCLUIR_CLIENTE);
+					presenter.run();
 				}
 				
 				case LISTAR_CLIENTE 	-> { 
@@ -35,12 +36,31 @@ public class MenuPresenter implements Presenter {
 					presenter.run();
 				}
 				
-				case CADASTRAR_VEICULO 	-> { System.out.println("Não implementado!"); }
-				case EXCLUIR_VEICULO 	-> { System.out.println("Não implementado!"); }
-				case LISTAR_VEICULO 	-> { System.out.println("Não implementado!"); }
-				case LOCAR_VEICULO 		-> { System.out.println("Não implementado!"); } 
-				case DEVOLVER_VEICULO 	-> { System.out.println("Não implementado!"); } 
-				case LISTAR_LOCACAO 	-> { System.out.println("Não implementado!"); }
+				case CADASTRAR_VEICULO 	-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.CADASTRAR_VEICULO);
+					presenter.run();
+				}
+
+				case EXCLUIR_VEICULO 	-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.EXCLUIR_VEICULO);
+					presenter.run();
+				}
+
+				case LISTAR_VEICULO 	-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.LISTAR_VEICULO);
+					presenter.run();
+				}
+
+				case LOCAR_VEICULO 		-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.LOCAR_VEICULO);
+					presenter.run();
+				}
+
+				case LISTAR_LOCACAO 	-> {
+					var presenter = PresenterFactory.get(PresenterFactory.Type.LISTAR_LOCACAO);
+					presenter.run();
+				}
+
 				case FIM 				-> fim = true;
 			}
 		}
