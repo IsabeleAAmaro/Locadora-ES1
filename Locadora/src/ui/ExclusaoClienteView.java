@@ -23,7 +23,6 @@ public class ExclusaoClienteView {
             }
         }
 
-        input.close();
         Long cpfLong = Long.parseLong(cpf);
         
         return new ClienteCPFData(cpfLong);

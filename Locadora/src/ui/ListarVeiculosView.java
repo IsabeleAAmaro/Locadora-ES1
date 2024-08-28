@@ -20,7 +20,6 @@ public class ListarVeiculosView {
 
         } while (ordenacao != 'P' && ordenacao != 'M');
 
-        input.close();
 
         return ordenacao;
     }

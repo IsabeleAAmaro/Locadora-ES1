@@ -25,7 +25,6 @@ public class LocarVeiculoView {
 
         LocalDateTime data = LocalDateTime.now();
 
-        input.close();
 
         return new LocacaoData(cpf, placa, data);
     }

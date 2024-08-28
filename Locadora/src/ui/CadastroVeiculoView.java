@@ -33,8 +33,6 @@ public class CadastroVeiculoView {
 		
 		System.out.print("Diaria (R$): ");
 		valorDiaria = input.nextDouble();
-		
-		input.close();
 
 		return new VeiculoData( placa,
                                 modelo,

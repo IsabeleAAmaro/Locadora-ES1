@@ -58,8 +58,6 @@ public class CadastroClienteView {
 		
 		System.out.print("Telefone: ");
 		numeroTel = input.nextLine();
-		
-		input.close();
 
 		// Devolve os dados lidos para o presenter
 		return new ClienteData(cpf, 

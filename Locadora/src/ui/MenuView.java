@@ -157,8 +157,7 @@ public class MenuView {
 				continue;
 			}
 		} while (opcao < min || opcao > max);
-		
-		input.close();
+
 		
 		return opcao;
 	}

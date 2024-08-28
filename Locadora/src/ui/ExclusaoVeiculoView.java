@@ -22,8 +22,6 @@ public class ExclusaoVeiculoView {
             placa = input.nextLine().toUpperCase();
 
         } while (placa.matches("[A-Z]{3}[0-9]{4}"));
-
-        input.close();
         
         return new PlacaData(placa);   
     }
