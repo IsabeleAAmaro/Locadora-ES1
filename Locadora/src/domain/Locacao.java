@@ -49,7 +49,8 @@ public class Locacao extends Persistent {
         
         CPF cpf = CPF.create(cpfCliente);
 
-        //TODO: Verificação do CPF
+        if (cpf == null)
+            erros.add(Erro.CLIENTE_INEXISTENTE);
 
         if(placaVeiculo == null || !placaVeiculo.matches("[A-Za-z]{3}\\d{4}"))
             erros.add(Erro.PLACA_INVALIDA);

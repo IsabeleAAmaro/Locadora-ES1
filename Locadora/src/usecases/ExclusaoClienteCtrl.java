@@ -15,8 +15,6 @@ public class ExclusaoClienteCtrl {
         this.clienteRepository = clienteRepository;
     }
 
-    //TODO: ALTERAR MAIS
-    //TODO: RETURN NULL???
     public List<Erro> excluirCLiente(ClienteCPFRequest cpfRequest){
         try{
             var resultado = new ClienteBuilder()

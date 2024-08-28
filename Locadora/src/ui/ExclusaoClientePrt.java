@@ -17,8 +17,6 @@ public class ExclusaoClientePrt implements Presenter {
         this.ctrl = controller;
     }
 
-    //TODO: TÃO FAZENDO O PARSELONG AQUI, SERÁ QUE ESSE É O CORRETO??
-    //TODO: MUDAR MAIS I GUESS
     @Override
     public void run() {
         Long cpf;
@@ -28,7 +26,6 @@ public class ExclusaoClientePrt implements Presenter {
             
             var data = view.readData();
 
-            //TODO: PORQUE PRECISA DESSE TRY??
             try {
                 cpf = data.cpf();
             } catch (Exception ex) {

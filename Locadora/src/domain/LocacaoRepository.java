@@ -13,8 +13,6 @@ public class LocacaoRepository implements Repository {
 
     private final ILocacaoDAO dao;
 
-    //TODO: Comentar metodos
-
     public LocacaoRepository(ILocacaoDAO dao) {
         this.dao = dao;
     }

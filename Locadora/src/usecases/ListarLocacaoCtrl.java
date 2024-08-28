@@ -11,7 +11,6 @@ import java.util.List;
 public class ListarLocacaoCtrl {
     private final LocacaoRepository repo;
 
-    //TODO: Colocar tabelas veiculo e locacao no locadora.sql
 
     public ListarLocacaoCtrl(LocacaoRepository repository) {
         super();

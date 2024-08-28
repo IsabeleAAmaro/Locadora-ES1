@@ -11,7 +11,6 @@ import java.util.Locale;
 
 public class LocacaoDAO implements ILocacaoDAO {
 
-    //TODO: Talvez mudar o datetimeformatter
     @Override
     public void insert(Locacao locacao) throws SQLException {
         try (var conn = DBConnection.get();

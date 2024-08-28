@@ -12,8 +12,6 @@ public class LocacaoMapper {
 
     public LocacaoListagemDTO map(ResultSet rs) throws SQLException {
 
-        //TODO: Msm coisa do dao i guess
-
         var df = DateTimeFormatter.ofPattern("ddMMyyyyHHmm", Locale.getDefault());
 
         return new LocacaoListagemDTO(rs.getString("id"),
