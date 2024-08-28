@@ -1,4 +1,8 @@
 package usecases;
 
-public record PlacaRequest(String placa) {}
+public record PlacaRequest(String placa) {
+
+
+
+}
 
