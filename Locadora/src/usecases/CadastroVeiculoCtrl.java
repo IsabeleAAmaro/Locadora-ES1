@@ -11,15 +11,14 @@ public class CadastroVeiculoCtrl {
     
     private final VeiculoRepository repo;
 
-    public CadastroVeiculoCtrl (VeiculoRepository repo){
+    public CadastroVeiculoCtrl (VeiculoRepository repo) {
         super();
         this.repo = repo;
     }
 
     public List<Erro> cadastraVeiculo (VeiculoRequest request){
 
-        try 
-        {
+        try {
             var result = new VeiculoBuilder()
                              .withPlaca(request.placa())
                              .withModelo(request.modelo())
@@ -28,8 +27,7 @@ public class CadastroVeiculoCtrl {
                              .withKM(request.quilometragem())
                              .build();
             
-            if (result.sucesso())
-            {
+            if (result.sucesso()) {
                 var veiculo = result.valor;   
 
                 var outroVeiculo = repo.findByPlaca(veiculo.getPlaca());
@@ -42,8 +40,7 @@ public class CadastroVeiculoCtrl {
             } else
                 return result.erros;
                                  
-        } catch (SQLException e) 
-        {
+        } catch (SQLException e) {
             return List.of(Erro.ERRO_BD);
         }
     }

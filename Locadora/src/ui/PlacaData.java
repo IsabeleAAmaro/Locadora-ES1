@@ -1,3 +1,6 @@
 package ui;
 
-public record PlacaData(String placa) {}
+public record PlacaData(String placa) {
+
+
+}

@@ -16,8 +16,7 @@ public class VeiculoRepository implements Repository{
         this.dao = dao;
     }
 
-    public List<Veiculo> findAll() throws SQLException  
-    {
+    public List<Veiculo> findAll() throws SQLException {
 
         var dtos = dao.findAll();    
         var veiculos = new ArrayList<Veiculo>();
@@ -29,8 +28,7 @@ public class VeiculoRepository implements Repository{
     }
         
         
-    public Veiculo findByPlaca(String placa) throws SQLException  
-    {
+    public Veiculo findByPlaca(String placa) throws SQLException {
         
         var dto = dao.findByPlaca(placa);
 
@@ -40,8 +38,7 @@ public class VeiculoRepository implements Repository{
         return null;
     }
         
-    public void add(Veiculo veiculo) throws SQLException  
-    {
+    public void add(Veiculo veiculo) throws SQLException {
             
         if (veiculo.getId() == null) 
         {
@@ -52,19 +49,16 @@ public class VeiculoRepository implements Repository{
             dao.update(veiculo);
     }
         
-    public void remove(Veiculo veiculo) throws SQLException  
-    {
+    public void remove(Veiculo veiculo) throws SQLException {
             
-        if (veiculo.getId() != null) 
-        {
+        if (veiculo.getId() != null) {
             dao.delete(veiculo);	
             veiculo.setId(null);
         }
     }
         
 
-    private Veiculo create(VeiculoDTO dto) 
-    {
+    private Veiculo create(VeiculoDTO dto) {
             var resultado = new VeiculoBuilder()
                     .withPlaca(dto.placa())
                     .withModelo(dto.modelo())

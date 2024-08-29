@@ -60,7 +60,7 @@ public class ClienteRepository implements Repository {
 	/**
 	 * Adiciona/atualiza um cliente no repositório
 	 * 
-	 * @param clienteCliente a ser inserido/atualizado
+	 * @param cliente Cliente a ser inserido/atualizado
 	 * @throws SQLException Exceção em caso de problemas no acesso ao BD
 	 */
 	public void add(Cliente cliente) throws SQLException  {
@@ -80,7 +80,7 @@ public class ClienteRepository implements Repository {
 	/**
 	 * Remove um cliente do repositório
 	 * 
-	 * @param CPF do cliente Cliente a ser removido
+	 * @param cpf do cliente Cliente a ser removido
 	 * @throws SQLException Exceção em caso de problemas no acesso ao BD
 	 */
 	public void remove(Long cpf) throws SQLException  {

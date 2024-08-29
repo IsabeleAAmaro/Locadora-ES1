@@ -7,13 +7,11 @@ import domain.Erro;
 
 public class CadastroVeiculoView {
     
-    public VeiculoData readData()
-    {
+    public VeiculoData readData() {
         var input = new Scanner(System.in);
 		String placa, modelo;
         int anoFabricacao, quilometragem;
         double valorDiaria;
-		
 		
 		System.out.println("\n--------------------");
 		System.out.println("Cadastro de Veiculos");
@@ -42,13 +40,10 @@ public class CadastroVeiculoView {
 				       		   );
     }
 
-    public void setErros (List<Erro> erros)
-    {
+    public void setErros (List<Erro> erros) {
         System.out.println("\nErro no cadastramento:");
-        for (var erro : erros)
-        {
-            switch (erro)
-            {
+        for (var erro : erros) {
+            switch (erro) {
                 case PLACA_INVALIDA          -> System.out.println("Placa inválida!");
                 case PLACA_REPETIDA          -> System.out.println("Placa Repetida!");
                 case MODELO_INVALIDO         -> System.out.println("Modelo inválido!");

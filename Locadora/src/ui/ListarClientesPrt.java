@@ -4,8 +4,8 @@ import usecases.ListarClientesCtrl;
 
 public class ListarClientesPrt implements Presenter {
 
-	private ListarClientesView view;
-	private ListarClientesCtrl controller;
+	private final ListarClientesView view;
+	private final ListarClientesCtrl controller;
 	
 	public ListarClientesPrt(ListarClientesView view, ListarClientesCtrl controller) {
 		super();

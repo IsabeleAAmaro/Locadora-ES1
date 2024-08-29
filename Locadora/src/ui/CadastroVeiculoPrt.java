@@ -8,24 +8,22 @@ import usecases.VeiculoRequest;
 
 public class CadastroVeiculoPrt implements Presenter{
     
-    private CadastroVeiculoView view;
-	private CadastroVeiculoCtrl controller;
+    private final CadastroVeiculoView view;
+	private final CadastroVeiculoCtrl controller;
 	
-	public CadastroVeiculoPrt(CadastroVeiculoView view, CadastroVeiculoCtrl controller) 
-    {
+	public CadastroVeiculoPrt(CadastroVeiculoView view, CadastroVeiculoCtrl controller) {
 		super();
 		this.view = view;
 		this.controller = controller;
 	}
 
     @Override
-    public void run(){
+    public void run() {
 
         String placa, modelo;
         List<Erro> erros;
 
-        do 
-        {            
+        do {
             var data = view.readData();
             
             try 
@@ -36,8 +34,7 @@ public class CadastroVeiculoPrt implements Presenter{
                 placa = null;
             }
 
-            try 
-            {
+            try {
             modelo = data.modelo();
 
             } catch (Exception e) {
@@ -55,6 +52,7 @@ public class CadastroVeiculoPrt implements Presenter{
                 view.setErros(erros);
             else
                 view.setSucesso();
+
         } while (erros != null);
     }
 }

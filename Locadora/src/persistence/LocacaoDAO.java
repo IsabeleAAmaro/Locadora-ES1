@@ -31,14 +31,27 @@ public class LocacaoDAO implements ILocacaoDAO {
     @Override
     public void update(Locacao locacao) throws SQLException {
 
+        // Abre uma conexão com o BD
+        // Cria um statement
+        try (var conn = DBConnection.get();
+             var stmt = conn.prepareStatement("update locacao set cpf_cliente = ?, placa_veiculo = ?, data_hora = ? where id = ?")) {
 
+            // Define os valores dos parâmetros
+            var df = DateTimeFormatter.ofPattern("yyyyMMdd");
 
+            stmt.setString(1, locacao.getCpfCliente().toString());
+            stmt.setString(2, locacao.getPlacaVeiculo());
+            stmt.setString(3, df.format(locacao.getDataHora()));
+            stmt.setString(4, locacao.getId());
+
+            stmt.execute();
+        }
     }
 
     @Override
     public void delete(Locacao locacao) throws SQLException {
         try (var conn = DBConnection.get();
-             var stmt = conn.prepareStatement("delete from locacao where id=?")) {
+             var stmt = conn.prepareStatement("delete from locacao where id = ?")) {
 
             stmt.setString(1, locacao.getId());
 
@@ -54,7 +67,7 @@ public class LocacaoDAO implements ILocacaoDAO {
              var rs = stmt.executeQuery("""
                  SELECT l.id, c.cpf, c.nome, v.placa, v.modelo, l.data_hora
                  FROM locacao l
-                 JOIN clientes c ON l.cpf_cliente = c.cpf
+                 JOIN locacaos c ON l.cpf_locacao = c.cpf
                  JOIN veiculo v ON l.placa_veiculo = v.placa
              """)) {
 

@@ -10,7 +10,9 @@ public class ExclusaoClienteView {
         var input = new Scanner(System.in);
         String cpf;
 
-        System.out.println("Exclusão de Cliente(s)");
+        System.out.println("\n--------------------");
+        System.out.println("Exclusão de Cliente");
+        System.out.println("--------------------");
 
         while (true) {
             System.out.print("CPF (somente números): ");

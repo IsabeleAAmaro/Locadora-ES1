@@ -11,7 +11,10 @@ public class VeiculoBuilder {
     private double valorDiaria;
     private int quilometragem;
 
-    public VeiculoBuilder(){}
+    public VeiculoBuilder(){
+
+
+    }
 
     public VeiculoBuilder withPlaca (String placa){
         this.placa = placa;
@@ -38,8 +41,7 @@ public class VeiculoBuilder {
         return this;
     }
     
-    public Resultado<Veiculo> build()
-    {
+    public Resultado<Veiculo> build() {
         List<Erro> erros = new ArrayList<>();
         
         var resultVeiculo = Veiculo.create( placa, 

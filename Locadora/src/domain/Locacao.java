@@ -35,7 +35,7 @@ public class Locacao extends Persistent {
         if (cpf == null)
             erros.add(Erro.CPF_INVALIDO);
 
-        if(placaVeiculo == null || !placaVeiculo.matches("[A-Za-z]{3}\\d{4}"))
+        if(placaVeiculo == null || !placaVeiculo.matches("[A-Z]{3}[0-9]{4}"))
             erros.add(Erro.PLACA_INVALIDA);
 
         if (data_hora == null)
@@ -52,7 +52,7 @@ public class Locacao extends Persistent {
         if (cpf == null)
             erros.add(Erro.CLIENTE_INEXISTENTE);
 
-        if(placaVeiculo == null || !placaVeiculo.matches("[A-Za-z]{3}\\d{4}"))
+        if(placaVeiculo == null || !placaVeiculo.matches("[A-Z]{3}[0-9]{4}"))
             erros.add(Erro.PLACA_INVALIDA);
 
         if (dataHora == null)

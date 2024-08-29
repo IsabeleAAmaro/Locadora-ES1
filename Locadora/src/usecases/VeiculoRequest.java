@@ -5,4 +5,6 @@ public record VeiculoRequest(String placa,
                           int anoFabricacao,
                           double valorDiaria,
                           int quilometragem) {
+
+
 }

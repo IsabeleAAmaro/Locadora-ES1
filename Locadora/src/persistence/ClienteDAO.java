@@ -59,8 +59,8 @@ public class ClienteDAO implements IClienteDAO {
 		// Abre uma conexão com o BD
 		// Cria um statement
 		try (var conn = DBConnection.get(); 
-			 var stmt = conn.prepareStatement("update clientes set cpf=?, nome=?, datanasc=?, logradouro=?, numero=?, "
-			     		+ "complemento=?, bairro=?, cidade=?, uf=?, cep=?, ddd=?, telefone=? where id=?")) {
+			 var stmt = conn.prepareStatement("update clientes set cpf = ?, nome = ?, datanasc = ?, logradouro = ?, numero = ?, "
+			     		+ "complemento = ?, bairro = ?, cidade = ?, uf = ?, cep = ?, ddd = ?, telefone = ? where id = ?")) {
 				
 			// Define os valores dos parâmetros
 			var df = DateTimeFormatter.ofPattern("yyyyMMdd");
@@ -96,7 +96,7 @@ public class ClienteDAO implements IClienteDAO {
 		// Abre uma conexão com o BD
 		// Cria um statement
 		try (var conn = DBConnection.get(); 
-			 var stmt = conn.prepareStatement("delete from clientes where id=?")) {
+			 var stmt = conn.prepareStatement("delete from clientes where id = ?")) {
 				
 			// Define ID do comando
 			stmt.setString(1, cliente.getId());

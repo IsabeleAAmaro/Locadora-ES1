@@ -12,14 +12,13 @@ public class ListarVeiculosCtrl {
     
     private final VeiculoRepository repo;
 
-    public ListarVeiculosCtrl (VeiculoRepository repo){
+    public ListarVeiculosCtrl (VeiculoRepository repo) {
         super();
         this.repo = repo;
     }
 
-    public Resultado<List<Veiculo>> listarVeiculos(){
-        try 
-        {
+    public Resultado<List<Veiculo>> listarVeiculos() {
+        try {
 			var veiculos = repo.findAll();
 			return Resultado.ok(veiculos);
 

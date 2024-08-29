@@ -16,7 +16,7 @@ public class ExclusaoClienteCtrl {
     }
 
     public List<Erro> excluirCLiente(ClienteCPFRequest cpfRequest){
-        try{
+        try {
             var resultado = new ClienteBuilder()
                     .withCPF(cpfRequest.cpf())
                     .build();
@@ -33,7 +33,6 @@ public class ExclusaoClienteCtrl {
             } else {
                 return resultado.erros;
             }
-
 
         } catch (SQLException e){
             return List.of(Erro.ERRO_BD);

@@ -23,7 +23,7 @@ CREATE TABLE veiculo (
     quilometragem integer NOT NULL
 );
 
-CREATE TABLE locacao(
+CREATE TABLE locacao (
     id varchar (36) PRIMARY KEY,
     cpf_cliente long NOT NULL UNIQUE ,
     placa_veiculo varchar(7) NOT NULL UNIQUE,

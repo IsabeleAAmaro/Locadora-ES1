@@ -10,15 +10,13 @@ public class ExclusaoVeiculoCtrl {
     
     private final VeiculoRepository repo;
 
-    public ExclusaoVeiculoCtrl(VeiculoRepository repo){
+    public ExclusaoVeiculoCtrl(VeiculoRepository repo) {
         super();
         this.repo = repo;
     }
 
-    public List<Erro> excluirVeiculo(PlacaRequest request)
-    {   
-        try
-        {
+    public List<Erro> excluirVeiculo(PlacaRequest request) {
+        try {
             var result = repo.findByPlaca(request.placa());
             
             if (result == null) 
@@ -27,10 +25,8 @@ public class ExclusaoVeiculoCtrl {
             repo.remove(result);
             return null;
 
-        } catch (SQLException e)
-        {
+        } catch (SQLException e) {
             return List.of(Erro.ERRO_BD);
         }
     }
-
 }

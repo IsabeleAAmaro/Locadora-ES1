@@ -11,8 +11,7 @@ public class Veiculo extends Persistent
     private double valorDiaria;
     private int quilometragem;
 
-    public Veiculo(String placa, String modelo, int anoFabricacao, double valorDiaria, int quilometragem)
-    {
+    public Veiculo(String placa, String modelo, int anoFabricacao, double valorDiaria, int quilometragem) {
         super();
         this.placa = placa;
         this.modelo = modelo;
@@ -25,8 +24,7 @@ public class Veiculo extends Persistent
                                             String modelo,
                                             int anoFabricacao, 
                                             double valorDiaria, 
-                                            int quilometragem)
-    {
+                                            int quilometragem) {
 
         List<Erro> erros = new ArrayList<>();
 

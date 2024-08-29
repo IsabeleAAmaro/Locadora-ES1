@@ -17,7 +17,7 @@ public class LocarVeiculoView {
 		System.out.println("Locação de Veículos");
 		System.out.println("--------------------");
 
-        System.out.println("CPF do cliente: ");
+        System.out.println("CPF do cliente (Somente números): ");
         cpf = input.nextLine();
 
         System.out.println("Placa do veículo: ");

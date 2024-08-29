@@ -13,6 +13,10 @@ public class ListarVeiculosView {
         var input = new Scanner(System.in);
         char ordenacao;
 
+        System.out.println("\n--------------------");
+        System.out.println("Listar de Veículos");
+        System.out.println("--------------------");
+
         do 
         {
             System.out.println("Ordenar por Placa (P) ou Modelo (M)? ");

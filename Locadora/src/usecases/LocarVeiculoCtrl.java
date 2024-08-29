@@ -24,16 +24,14 @@ public class LocarVeiculoCtrl {
 
     public List<Erro> locarVeiculo(LocacaoRequest request) {
        
-        try 
-        {
+        try {
             var resultado = new  LocacaoBuilder()
                                 .withCPFCliente(request.cpfCliente())
                                 .withPlacaVeiculo(request.placaVeiculo())
                                 .withDataHora(request.dataHora())
                                 .build(false);
 
-            if (resultado.sucesso()) 
-            {  
+            if (resultado.sucesso()) {
                 var locacao = resultado.valor;
 
                 List<Erro> erros = new ArrayList<>(); 
@@ -64,8 +62,7 @@ public class LocarVeiculoCtrl {
             } else 
                 return resultado.erros;
 
-        } catch (SQLException e) 
-        {
+        } catch (SQLException e) {
             return List.of(Erro.ERRO_BD);
         }
     }

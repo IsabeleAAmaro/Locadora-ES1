@@ -4,8 +4,8 @@ import usecases.ListarLocacaoCtrl;
 
 public class ListarLocacaoPrt implements Presenter{
 
-    private ListarLocacaoView view;
-	private ListarLocacaoCtrl controller;
+    private final ListarLocacaoView view;
+	private final ListarLocacaoCtrl controller;
 	
 	public ListarLocacaoPrt(ListarLocacaoView view, ListarLocacaoCtrl controller) {
 		super();
